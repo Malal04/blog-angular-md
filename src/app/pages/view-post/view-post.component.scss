@@ -1,0 +1,120 @@
+.my-but {
+    margin-left: 5px;
+  }
+  
+  .card-container {
+    margin: 16px;
+    max-width: 70%;
+  }
+  
+  mat-card {
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+    margin-bottom: 16px;
+    transition: 0.3s;
+    width: 100%;
+  }
+  
+  .example-header-image {
+    background-image: url('../../../../public/malal.jpeg');
+    background-size: cover;
+  }
+  
+  .post-img {
+    width: 300px;
+    height: 200px;
+    object-fit: cover;
+    margin-top: 15px;
+  }
+  
+  @media (max-width: 768px) {
+    .card-container {
+      max-width: 90%;
+    }
+  
+    .example-header-image {
+      height: 150px;
+    }
+  
+    .post-img {
+      height: 150px;
+    }
+  }
+
+  mat-card:hover {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  }
+
+  mat-card.favorite {
+    background-color: red;
+    color: white;
+  }
+
+  mat-card.favorite:hover {
+    background-color: darkred;
+  }
+
+  mat-card.favorite.my-botton {
+    background-color: darkred;
+    color: white;
+  }
+
+  mat-card.favorite.my-botton:hover {
+    background-color: red;
+  }
+
+  mat-card.my {
+    color: #fff;
+  }
+
+  mat-card.my:hover {
+    color: #000;
+  }
+
+  mat-card.my-but {
+    background-color: #3f51b5;
+    color: white;
+    padding:12px;
+    border: none;
+  }
+
+  .my-bb{
+    float: right;
+    background-color: #3f51b5;
+    color: white;
+  }
+
+  
+  mat-card-content{
+    margin-top: 10px;
+  }
+
+  mat-card-footer{
+    margin-top: 20px;
+  }
+
+  .img{
+    object-fit: cover;
+    margin-bottom: 10px;
+  }
+
+  .img:hover{
+    opacity: 0.8;
+  }
+
+  .comment-card{
+    margin-top: 20px;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+    background-color: #f5f5f5;
+    margin-bottom: 20px;
+    transition: 0.3s;
+    cursor: pointer;
+  }
+
+  mat-form-field{
+    width: 100%;
+    margin-bottom: 10px;
+  }

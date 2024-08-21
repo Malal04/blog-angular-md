@@ -1,0 +1,51 @@
+<div class="search-form">
+    <mat-form-field appearance="outline" class="search-input">
+        <mat-label>Enter Keyword to searh</mat-label>
+
+        <input matInput [(ngModel)]="name" >
+
+        <button mat-button matSuffix color="primary" (click)="searchByName()"> 
+            <mat-icon>search</mat-icon>
+        </button>
+    </mat-form-field>
+</div>
+
+<div class="empty" *ngIf="result.length == 0">
+    <mat-icon class="icon">no_sin</mat-icon>
+    <br>
+    <span>Nothing to see here.</span>
+</div>
+
+<div class="card-container" *ngFor="let item of result">
+    <mat-card>
+        <mat-card-header>
+          <div mat-card-avatar class="example-header-image">
+            <!-- Optionally add an avatar image here -->
+          </div>
+          <mat-card-title>
+            {{ item.name }}
+          </mat-card-title>
+          <mat-card-subtitle>
+            Posted by: {{ item.postedBy }} | Posted on: {{ item.date | date:'medium' }}
+          </mat-card-subtitle>
+        </mat-card-header>
+    
+        <img mat-card-image [src]="item.img" alt="card image" class="post-img" />
+    
+        <mat-card-content>
+          {{ (item.content && item.content.length > 600 ? (item.content | slice:0:600) + '....' : item.content) || 'Content not available' }}
+        </mat-card-content>
+        
+        <mat-card-actions>
+          <button mat-raised-button color="primary" class="my-but">
+            {{ item.likeCount }} <mat-icon>favorite</mat-icon>
+          </button>
+          <button mat-raised-button color="primary" class="my-but">
+            {{ item.viewCount }} <mat-icon>remove_red_eye</mat-icon> 
+          </button>
+          <button mat-raised-button color="primary" class="my-but" routerLink="/view-post/{{ item.id }}">
+            View Post
+          </button>
+        </mat-card-actions>
+      </mat-card>
+</div>
